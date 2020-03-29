@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 2ec5a032eaf8d0f418294c126809146b
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Hugme
+  fontNames:
+  - Hugme
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 15505aaef8254794dad58f233428cdf2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 3
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
