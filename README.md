@@ -45,7 +45,9 @@ link a lista de requerimientos funcionales:
 https://upbeduco-my.sharepoint.com/:w:/r/personal/jose_agudeloa_upb_edu_co/_layouts/15/Doc.aspx?sourcedoc=%7B277B742F-34EE-4EFD-A6E7-404C66F5B494%7D&file=Batallas%20de%20rap.docx&action=default&mobileredirect=true
 
 Link a ejecutable
-La build sacada es una version menos actual a lo que esta el proyecto en este momento, por motivos que no conocemos aun la build de las
-actualizaciones hechas por favor revisar funcionamiento en la ventana de unity para poder tener un testeo adecuado del proyecto y asi recibir el feedback pertinente.
+
+
+La build sacada es una version menos actual a lo que esta el proyecto en este momento, por motivos que no conocemos aun,la build de las
+actualizaciones hechas no funciona.Por favor revisar funcionamiento en la ventana de unity para poder tener un testeo adecuado del proyecto y asi recibir el feedback pertinente.
 https://upbeduco-my.sharepoint.com/:f:/g/personal/carlos_rojasb_upb_edu_co/Ep4WRHTa_vFDj6muIBOTzSwB74isEZWWzK7yM0UyLxqzJQ?e=xugbxs
 
