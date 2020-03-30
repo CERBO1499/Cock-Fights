@@ -37,6 +37,7 @@ este lo enviara a una pantalla donde debera ingresar el nombre de los dos jugado
 seleccion de tematica, estas determinaran el tipo de lirica que va a tirar.Tenga cuidado tiene un tiempo para realizar dicha eleccion.
 Luego de la seleccion de tematicas comienza el juego, en este usted debera completar la frase con la palabra que crea 
 mas adecuada, ira saliendo unos feedbacks los cuales determinaran que tan bueno o no fue su respuesta.
+En caso de existir un empate el jugador que aparezca como ganador sera el primero
 
 link a lista de requerimientos funcionales:
 https://upbeduco-my.sharepoint.com/:w:/r/personal/jose_agudeloa_upb_edu_co/_layouts/15/Doc.aspx?sourcedoc=%7B277B742F-34EE-4EFD-A6E7-404C66F5B494%7D&file=Batallas%20de%20rap.docx&action=default&mobileredirect=true
