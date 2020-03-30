@@ -395,7 +395,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81952129}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -830,6 +830,7 @@ MonoBehaviour:
   - {fileID: 2046613754}
   ganador: {fileID: 1654231850}
   perdedor: {fileID: 1922821416}
+  concepto: {fileID: 1172386250}
 --- !u!1 &168461256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,7 +1602,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Tik-Tok
+  m_text: A
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb64cbe8c7bf4be498068e3b582fbf5b, type: 2}
   m_sharedMaterial: {fileID: 21693855709617492, guid: bb64cbe8c7bf4be498068e3b582fbf5b,
@@ -1634,7 +1635,7 @@ MonoBehaviour:
   m_fontSizeBase: 150
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 140
+  m_fontSizeMin: 125
   m_fontSizeMax: 160
   m_fontStyle: 0
   m_textAlignment: 514
@@ -1671,7 +1672,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 307384927}
-    characterCount: 7
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -2719,7 +2720,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534102701}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -2838,7 +2839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &605324034
 Transform:
   m_ObjectHideFlags: 0
@@ -3435,7 +3436,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1665440635}
   m_FillRect: {fileID: 654957986}
   m_HandleRect: {fileID: 1665440633}
-  m_Direction: 1
+  m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
@@ -4050,7 +4051,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738963929}
   serializedVersion: 6
-  lengthInSec: 2
+  lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -4125,7 +4126,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.7
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4978,7 +4979,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    m_BurstCount: 2
+    m_BurstCount: 3
     m_Bursts:
     - serializedVersion: 2
       time: 0
@@ -5040,6 +5041,64 @@ ParticleSystem:
       probability: 1
     - serializedVersion: 2
       time: 1.2
+      countCurve:
+        serializedVersion: 2
+        minMaxState: 0
+        scalar: 1
+        minScalar: 30
+        maxCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        minCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      cycleCount: 1
+      repeatInterval: 0.01
+      probability: 1
+    - serializedVersion: 2
+      time: 2.4
       countCurve:
         serializedVersion: 2
         minMaxState: 0
@@ -8869,7 +8928,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9731,7 +9790,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051564641}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -9848,7 +9907,7 @@ GameObject:
   - component: {fileID: 1172386253}
   - component: {fileID: 1172386252}
   m_Layer: 0
-  m_Name: TEMATICA
+  m_Name: CONCEPTO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14774,7 +14833,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190687486}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -14837,7 +14896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 5, y: 0}
+  m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1229598272
@@ -15183,6 +15242,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
         type: 3}
+      propertyPath: conceptos.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
+        type: 3}
+      propertyPath: conceptos.Array.data[0].patrones.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
+        type: 3}
+      propertyPath: conceptos.Array.data[1].patrones.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
+        type: 3}
       propertyPath: color1.r
       value: 0.21560161
       objectReference: {fileID: 0}
@@ -15241,6 +15315,61 @@ PrefabInstance:
       propertyPath: color2.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
+        type: 3}
+      propertyPath: tematica.concepto
+      value: Amor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
+        type: 3}
+      propertyPath: conceptos.Array.data[0].concepto
+      value: "Tecnolog\xEDa"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
+        type: 3}
+      propertyPath: conceptos.Array.data[1].concepto
+      value: "Acci\xF3n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
+        type: 3}
+      propertyPath: conceptos.Array.data[0].patrones.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 3e1adfa29b177f843874b7acd6ed23de, type: 3}
+    - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
+        type: 3}
+      propertyPath: conceptos.Array.data[0].patrones.Array.data[1]
+      value: 
+      objectReference: {fileID: 4900000, guid: 9b731e12300c9284eb2ef36e3bdad79b, type: 3}
+    - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
+        type: 3}
+      propertyPath: conceptos.Array.data[0].patrones.Array.data[2]
+      value: 
+      objectReference: {fileID: 4900000, guid: d594fab55d0b4f14abeb82a031ae6c8c, type: 3}
+    - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
+        type: 3}
+      propertyPath: conceptos.Array.data[0].patrones.Array.data[3]
+      value: 
+      objectReference: {fileID: 4900000, guid: 70c62a775b6741149a8208d5d1bdb80b, type: 3}
+    - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
+        type: 3}
+      propertyPath: conceptos.Array.data[1].patrones.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: d594fab55d0b4f14abeb82a031ae6c8c, type: 3}
+    - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
+        type: 3}
+      propertyPath: conceptos.Array.data[1].patrones.Array.data[1]
+      value: 
+      objectReference: {fileID: 4900000, guid: 70c62a775b6741149a8208d5d1bdb80b, type: 3}
+    - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
+        type: 3}
+      propertyPath: conceptos.Array.data[1].patrones.Array.data[2]
+      value: 
+      objectReference: {fileID: 4900000, guid: 3e1adfa29b177f843874b7acd6ed23de, type: 3}
+    - target: {fileID: 3699379520724568234, guid: c283ce75112c9bf47932932c509a280c,
+        type: 3}
+      propertyPath: conceptos.Array.data[1].patrones.Array.data[3]
+      value: 
+      objectReference: {fileID: 4900000, guid: 9b731e12300c9284eb2ef36e3bdad79b, type: 3}
     - target: {fileID: 7414384625602534518, guid: c283ce75112c9bf47932932c509a280c,
         type: 3}
       propertyPath: tiempoCelebracion
@@ -16406,8 +16535,8 @@ RectTransform:
   m_Father: {fileID: 1959945601}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 5, y: -15}
   m_SizeDelta: {x: 20, y: 0.0000009536743}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16799,7 +16928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 20}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1436910879
@@ -16822,7 +16951,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Fobia
+  m_text: C
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb64cbe8c7bf4be498068e3b582fbf5b, type: 2}
   m_sharedMaterial: {fileID: 21693855709617492, guid: bb64cbe8c7bf4be498068e3b582fbf5b,
@@ -16855,7 +16984,7 @@ MonoBehaviour:
   m_fontSizeBase: 150
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 140
+  m_fontSizeMin: 125
   m_fontSizeMax: 160
   m_fontStyle: 0
   m_textAlignment: 514
@@ -16865,7 +16994,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_firstOverflowCharacterIndex: -1
@@ -16892,7 +17021,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1436910879}
-    characterCount: 5
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -17571,7 +17700,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695848128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -17645,7 +17774,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705088402}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -17950,7 +18079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 20}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1806415417
@@ -17973,7 +18102,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Redes sociales
+  m_text: B
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb64cbe8c7bf4be498068e3b582fbf5b, type: 2}
   m_sharedMaterial: {fileID: 21693855709617492, guid: bb64cbe8c7bf4be498068e3b582fbf5b,
@@ -18002,11 +18131,11 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 150
+  m_fontSize: 160
   m_fontSizeBase: 150
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 140
+  m_fontSizeMin: 125
   m_fontSizeMax: 160
   m_fontStyle: 0
   m_textAlignment: 514
@@ -18043,12 +18172,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1806415417}
-    characterCount: 14
+    characterCount: 1
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -18454,7 +18583,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840864961}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -19055,7 +19184,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1937541072
 MonoBehaviour:
@@ -19077,7 +19206,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Tecnologia
+  m_text: CONCEPTO
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb64cbe8c7bf4be498068e3b582fbf5b, type: 2}
   m_sharedMaterial: {fileID: 21693855709617492, guid: bb64cbe8c7bf4be498068e3b582fbf5b,
@@ -19147,7 +19276,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1937541072}
-    characterCount: 10
+    characterCount: 8
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -19899,7 +20028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 20}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2074490149
@@ -19922,7 +20051,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Spiderman
+  m_text: D
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb64cbe8c7bf4be498068e3b582fbf5b, type: 2}
   m_sharedMaterial: {fileID: 21693855709617492, guid: bb64cbe8c7bf4be498068e3b582fbf5b,
@@ -19951,11 +20080,11 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 135.85
+  m_fontSize: 160
   m_fontSizeBase: 150
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 130
+  m_fontSizeMin: 125
   m_fontSizeMax: 160
   m_fontStyle: 0
   m_textAlignment: 514
@@ -19992,7 +20121,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2074490149}
-    characterCount: 9
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
     wordCount: 1

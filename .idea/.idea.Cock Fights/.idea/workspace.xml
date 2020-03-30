@@ -8,18 +8,38 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://E:/Scripting/Dating Simulator-Scripting/Assets/Scripts/Target/Target.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Patron.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://E:/Scripting/Dating Simulator-Scripting/Assets/Scripts/Target/Hater.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Frase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PalabraE.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RunTurn.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://E:/PROGRAMACION GRAFICA/Vfx scene/Assets/Carlos/Scripts/ControlLuz.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ManagerScene.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://E:/Scripting/Dating Simulator-Scripting/Assets/Scripts/Target/TargetTraits.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://E:/Scripting/Dating Simulator-Scripting/Assets/Scripts/Target/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Posibilidades.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RhymeManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Espacio.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Patron.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TutorialManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Puntuacion.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneMan.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Releaser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6F65ABCB-040A-47DB-87DC-20D5520A125D/c3/2de21877/Slider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://E:/Scripting/Dating Simulator-Scripting/Assets/Scripts/Target/UIMan.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://E:/PROGRAMACION GRAFICA/Vfx scene/Assets/Carlos/Scripts/ControlLuz.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TematicaGeneral.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/Scripting/Dating Simulator-Scripting/Assets/Scripts/Target/TargetTraits.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LectorDeTexto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/Scripting/Dating Simulator-Scripting/Assets/Scripts/Target/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://E:/Scripting/Dating Simulator-Scripting/Assets/Scripts/Target/Target.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://E:/Scripting/Dating Simulator-Scripting/Assets/Scripts/Target/Hater.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GanadorOn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Puntaje.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TempoBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Palabra.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BasesManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -32,11 +52,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ManagerScene.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Patron.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BasesManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI Particle System.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RunTurn.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" />
       </list>
     </option>
   </component>
@@ -90,6 +110,7 @@
       <workItem from="1584639997455" duration="5199000" />
       <workItem from="1585448526002" duration="1080000" />
       <workItem from="1585450346241" duration="2959000" />
+      <workItem from="1585512766837" duration="8471000" />
     </task>
     <servers />
   </component>
@@ -98,6 +119,17 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
   </component>

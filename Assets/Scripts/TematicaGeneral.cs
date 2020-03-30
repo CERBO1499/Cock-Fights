@@ -7,24 +7,30 @@ using System;
 public struct TematicaGeneral
 {
     [SerializeField]
-    string tematica;
+    private string concepto;
 
     [SerializeField]
     TextAsset[] patrones;
 
+    public string Concepto { get => concepto; }
+
     public TextAsset[] PatronesAleatorios(int cantPatrones)
     {
         TextAsset[] patronesA = new TextAsset[cantPatrones];
+        List<TextAsset> _patrones = new List<TextAsset>();
+        int r = 0;
 
-        int r0 = new System.Random().Next(0, patronesA.Length);
-        int r1 = new System.Random().Next(0, patronesA.Length);
-        int r2 = new System.Random().Next(0, patronesA.Length);
-        int r3 = new System.Random().Next(0, patronesA.Length);
+        for (int j = 0; j < patrones.Length; j++)
+        {
+            _patrones.Add(patrones[j]);
+        }
 
-        patronesA[0] = patrones[0];
-        patronesA[1] = patrones[1];
-        patronesA[2] = patrones[2];
-        patronesA[3] = patrones[3];
+        for (int i = 0; i < patronesA.Length; i++)
+        {
+            r = UnityEngine.Random.Range(0, _patrones.Count);
+            patronesA[i] = _patrones[r];
+            _patrones.RemoveAt(r);
+        }
 
         /*
         for (int i = 0; i < patronesA.Length; i++)

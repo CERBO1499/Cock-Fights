@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System; 
 
 public class GameManager : MonoBehaviour
 {   
@@ -42,7 +41,7 @@ public class GameManager : MonoBehaviour
     private float tiempoBloqueo, tiempoUsuario;
 
     [SerializeField]
-    private TematicaGeneral tematica;
+    private TematicaGeneral[] conceptos;
 
     private Patron patron;
     private LevelManager lvlManager;
@@ -64,7 +63,10 @@ public class GameManager : MonoBehaviour
         usuario1 = BasesManager.Instancia.Usuario1;
         usuario2 = BasesManager.Instancia.Usuario2;
 
-        lvlManager.Textos = tematica.PatronesAleatorios(4);
+        System.Random ran = new System.Random();
+        int ranConcepto = ran.Next(0, conceptos.Length);
+        UI.Instance.Concepto = conceptos[ranConcepto].Concepto;
+        lvlManager.Textos = conceptos[ranConcepto].PatronesAleatorios(4);
         lvlManager.Inicializar();
 
         this.player1 = player1;
@@ -101,13 +103,15 @@ public class GameManager : MonoBehaviour
         {
             TerminarJuego();
         }
+        else
+        {
+            lvlManager.enabled = true;
+            //patron.MatarPatron();
+            lvlManager.MatarLevelMng();
+            InicializarGameMng(player1 = !player1, ronda);
 
-        lvlManager.enabled = true;
-        //patron.MatarPatron();
-        lvlManager.MatarLevelMng();
-        InicializarGameMng(player1 = !player1, ronda);
-
-        Debug.Log("Ronda: " + ronda);
+            Debug.Log("Ronda: " + ronda);
+        }
     }
 
     public void EstablecerPatron(Patron patron)
@@ -125,6 +129,7 @@ public class GameManager : MonoBehaviour
 
     void TerminarJuego()
     {
+        lvlManager.runTurn.Pause = true;
         puntaje.VerificarGanador(usuario1, usuario2, color1, color2);
     }
 

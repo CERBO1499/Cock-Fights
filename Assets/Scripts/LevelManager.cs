@@ -34,6 +34,7 @@ public class LevelManager : MonoBehaviour
     //public float timeBeforeSong = 10f;
 
     private float _timeToSelectTheme;
+    private bool VFXRYME = false;
 
     public bool startTimer;
 
@@ -49,9 +50,11 @@ public class LevelManager : MonoBehaviour
     private LectorDeTexto lector;
 
     public TextAsset[] Textos { get; set; }
+    
 
     private void Awake()
     {
+        
         patron = FindObjectOfType<Patron>();
     }
 
@@ -106,22 +109,37 @@ public class LevelManager : MonoBehaviour
     {
         timeSlider.value = _timeToSelectTheme;
 
+        
         if (startTimer)
         {
             _timeToSelectTheme -= Time.deltaTime;
+            if (timeSlider.value <= 3 && VFXRYME==false)
+            {
+                UI.Instance.ParSys[1].Play();
+                VFXRYME = true;
+
+
+                print("PArticulasFuncionando");
+            }
+            
             if (_timeToSelectTheme <= 0)
             {
+
                 //game over
                 RunTurn();
+                
 
                 //  Desactiva el aciso de improvisa.
                 UI.Instance.ImprovisaOn(false);
 
                 startTimer = false;
+                UI.Instance.RimasOn(false);
+                VFXRYME = false;
+
             }
         }
 
-        if (globalTimer)
+        /*if (globalTimer)
         {
             int timerUi = (int)_timeToSelectTheme;
             globalTimerText.text = timerUi.ToString();
@@ -132,9 +150,9 @@ public class LevelManager : MonoBehaviour
                 globalTimerGo.SetActive(false);
 
                 //  Desactiva las rimas.
-                UI.Instance.RimasOn(false);
+                
             }
-        }
+        }*/
     }
 
     private void RunTurn()
@@ -184,11 +202,11 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void ActiveGlobalTimer()
+    /*private void ActiveGlobalTimer()
     {
         globalTimer = true;
         globalTimerGo.SetActive(true);
-    }
+    }*/
 
     private void DesactivarPatrones()
     {
@@ -215,7 +233,7 @@ public class LevelManager : MonoBehaviour
         UI.Instance.ImprovisaOn(true);
         EnableThemeButtons(false);
         themeButtons[button].transform.GetChild(0).gameObject.SetActive(true);
-        ActiveGlobalTimer();
+       // ActiveGlobalTimer();
 
         /*
         patrones[button].SetActive(true);

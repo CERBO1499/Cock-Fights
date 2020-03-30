@@ -43,6 +43,7 @@
           <e p="Espacio.cs" t="Include" />
           <e p="Frase.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="GanadorOn.cs" t="Include" />
           <e p="Gestures3DCollider.cs" t="Include" />
           <e p="LaunchedWord.cs" t="Include" />
           <e p="Launcher.cs" t="Include" />

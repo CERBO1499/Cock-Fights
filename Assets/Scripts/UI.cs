@@ -11,11 +11,12 @@ public class UI : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        parSys = GetComponentInChildren<ParticleSystem>();
-        main = parSys.main;
+        parSys = GetComponentsInChildren<ParticleSystem>();
+        main = parSys[0].main;
         Inicializar();
         
-        
+
+
     }
     public static UI Instance
     {
@@ -27,12 +28,6 @@ public class UI : MonoBehaviour
             }
             return instance;
         }
-    }
-
-    public ParticleSystem ParSys
-    {
-        get => parSys;
-        
     }
     //  SINGLETON
 
@@ -61,18 +56,33 @@ public class UI : MonoBehaviour
     //  Recibe la pantalla de ganador
     [SerializeField]
     private GameObject ganador;
-
+    //  Recibe la pantalla de ganador
     [SerializeField]
     private GameObject perdedor;
+    //  Recibe la pantalla de ganador
+    [SerializeField]
+    private GameObject concepto;
 
-    ParticleSystem parSys;
+    ParticleSystem[] parSys;
     ParticleSystem.MainModule main;
 
     //  Palabras interactuables.
     private PalabraE[] btnPalabras;
 
-    
-    
+
+    public string Concepto 
+    { 
+        set 
+        {
+            concepto.GetComponentInChildren<TextMeshProUGUI>().text = value;
+        } 
+    }
+    public ParticleSystem[] ParSys
+    {
+        get => parSys;
+
+    }
+
     public void Inicializar()
     {
         btnPalabras = FindObjectsOfType<PalabraE>();

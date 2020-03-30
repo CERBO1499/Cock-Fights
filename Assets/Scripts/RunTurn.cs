@@ -102,7 +102,7 @@ public class RunTurn : MonoBehaviour
             timePerRhyme -= Time.deltaTime; //empieza a bajar tiempo de la rima
             if (timePerRhyme <= 2 && VFXUI == false)
             {
-                UI.Instance.ParSys.Play();
+                UI.Instance.ParSys[0].Play();
                 VFXUI = true;
             }
 
