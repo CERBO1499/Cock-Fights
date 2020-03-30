@@ -32,6 +32,8 @@ ocasiones se corre y tapa la siguiente palabra de la frase.
 	Solucion: Ninguna.
 La letra que tenemos no contiene tildes asi que las palabras tildadas se veran afectadas por esto.
 
+Dentro del proyecto existia una escena para ingresar nombres para cada jugador, estaba ocasionando conflictos a la hora de sacar el build por lo que decidimos eliminarla en ultimo momento, dado esto aparecera en la escena de turno turno de y un espacio en blanco.
+
 Instrucciones de uso: Para probar adecuadamente este prototipo debe iniciar el juego dando touch en el boton "LOCAL"
 este lo enviara a una pantalla donde debera ingresar el nombre de los dos jugadores a participar. Procedera con la 
 seleccion de tematica, estas determinaran el tipo de lirica que va a tirar.Tenga cuidado tiene un tiempo para realizar dicha eleccion.
