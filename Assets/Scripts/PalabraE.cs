@@ -13,6 +13,11 @@ public class PalabraE : Palabra
     private const int puntaje = 100;
     Intencion intencion;
 
+
+   
+
+   
+
     //  Define la palabra escogible.
     public override void Inicializar(string palabra, Intencion intencion)
     {
@@ -32,12 +37,16 @@ public class PalabraE : Palabra
         UI.Instance.PalabrasOn(false);
 
         //  Da por escogida la palabra.
+
+        EnPalabraEscogida(palabra, intencion);
         try
         {
             if (!escogida)
             {
-                EnPalabraEscogida(palabra, intencion);
+                //EnPalabraEscogida(palabra, intencion);
+                
                 escogida = true;
+                
             }
         }
         catch

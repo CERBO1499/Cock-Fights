@@ -77,7 +77,8 @@ public class BasesManager : MonoBehaviour
     {
         parlante.Stop();
         parlante.clip = bases[baseActual].instrumental;
-        nombre.text = bases[baseActual].nombre;
+        if(nombre != null) nombre.text = bases[baseActual].nombre;
+        parlante.time = bases[baseActual].tiempoRimas - 0.2f;
         parlante.Play();
 
         //Debug.Log(baseActual);

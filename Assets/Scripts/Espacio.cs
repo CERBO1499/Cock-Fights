@@ -14,13 +14,14 @@ public class Espacio : MonoBehaviour
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        text = GetComponent<TextMeshPro>();
+        frase = GetComponentInParent<Frase>();
+        resalto = GetComponentInChildren<SpriteRenderer>();
     }
 
     public void Inicializar()
     {
-        text = GetComponent<TextMeshPro>();
-        frase = GetComponentInParent<Frase>();
-        resalto = GetComponentInChildren<SpriteRenderer>();
+        
     }
 
     public void Habilitado(bool estado)
@@ -45,10 +46,12 @@ public class Espacio : MonoBehaviour
 
     public void MatarEspacio()
     {
+        if(rectTransform == null) rectTransform = GetComponent<RectTransform>();
         Vector3 pos = rectTransform.position;
 
         PalabraE.EnPalabraEscogida -= LlenarEspacio;
         UbicarEspacio(Vector3.zero);
+        if(text == null) text = GetComponent<TextMeshPro>();
         text.text = "";
         Habilitado(false);
     }

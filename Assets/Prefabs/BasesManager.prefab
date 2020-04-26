@@ -46,18 +46,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: {fileID: 0}
   bases:
-  - instrumental: {fileID: 8300000, guid: e0d561b25b0f53347b555968919bb94e, type: 3}
-    nombre: The King
-    tiempoRimas: 15.7
-    tiempoFrase: 4.1
-  - instrumental: {fileID: 8300000, guid: 0629b7b6218f62a418c91b77b982618c, type: 3}
-    nombre: Iron Man
-    tiempoRimas: 14
+  - instrumental: {fileID: 8300000, guid: 97facad897e4c5f4a99ba53048c417a7, type: 3}
+    nombre: Mistery
+    tiempoRimas: 6.6
     tiempoFrase: 4
-  - instrumental: {fileID: 8300000, guid: 805922615fb6b2f4f9fe40d088098fed, type: 3}
-    nombre: Flow Letal
-    tiempoRimas: 16.5
-    tiempoFrase: 4.1
+  - instrumental: {fileID: 8300000, guid: bb580f502946cd149bd8a9ef5c0038bc, type: 3}
+    nombre: Knockout
+    tiempoRimas: 6.6
+    tiempoFrase: 4
+  - instrumental: {fileID: 8300000, guid: 12e99e724ccce564aad81ffb1896b4f1, type: 3}
+    nombre: Dubstep
+    tiempoRimas: 6.6
+    tiempoFrase: 4
+  - instrumental: {fileID: 8300000, guid: 89a562ab3a1bae349a0f7b65f8a0f9e3, type: 3}
+    nombre: Free
+    tiempoRimas: 6.6
+    tiempoFrase: 4
+  - instrumental: {fileID: 8300000, guid: 0f9bab42b1922c94aad6236e54161858, type: 3}
+    nombre: Horror
+    tiempoRimas: 6.6
+    tiempoFrase: 4
+  - instrumental: {fileID: 8300000, guid: ef716afbd31c0d1489f743dbed34e82c, type: 3}
+    nombre: Work Hard
+    tiempoRimas: 6.6
+    tiempoFrase: 4
+  - instrumental: {fileID: 8300000, guid: bdb080502bd0f90469ceda4200446b3e, type: 3}
+    nombre: Boogeyman
+    tiempoRimas: 6.6
+    tiempoFrase: 4
+  - instrumental: {fileID: 8300000, guid: 8cde28caf178674418382c4ae128f283, type: 3}
+    nombre: Drip
+    tiempoRimas: 6.6
+    tiempoFrase: 4
+  - instrumental: {fileID: 8300000, guid: ff1365ed84d413e4e96dfc7c0790d790, type: 3}
+    nombre: Apart
+    tiempoRimas: 6.6
+    tiempoFrase: 4
+  - instrumental: {fileID: 8300000, guid: 4e75a6bcd6e28ff44a10e116cea5ebc0, type: 3}
+    nombre: Strong
+    tiempoRimas: 6.6
+    tiempoFrase: 4
 --- !u!82 &1063224181831345377
 AudioSource:
   m_ObjectHideFlags: 0
@@ -70,13 +98,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 200
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

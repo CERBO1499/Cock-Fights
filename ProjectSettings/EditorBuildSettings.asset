@@ -6,21 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SelectTheme.unity
-    guid: 8973ae41d9a54924f8c5027ad526d83b
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 8c7549eff6867b447af63e265c934472
   - enabled: 1
-    path: Assets/Scenes/Nuevas Frases.unity
-    guid: f94f08925c8a8384786010c3b63deabc
-  - enabled: 1
-    path: Assets/Scenes/Juego.unity
-    guid: 14ab2dd1403c74d4e99468ba7161344b
-  - enabled: 1
-    path: Assets/Scenes/LoadingScene.unity
-    guid: 0874119559bc71d44acc923e1445231d
-  - enabled: 1
     path: Assets/Scenes/IngresarNombres.unity
     guid: 791e50d50a70d374ba0143a7e2b16cfe
+  - enabled: 0
+    path: Assets/Scenes/Juego.unity
+    guid: 14ab2dd1403c74d4e99468ba7161344b
+  - enabled: 0
+    path: Assets/Scenes/JuegoTTS.unity
+    guid: 0bfb9879ab8ab8d4f9199c1a3817eb36
+  - enabled: 0
+    path: Assets/Scenes/Juego Andry.unity
+    guid: e84cfffc62b8244408da5d463dbc7031
+  - enabled: 0
+    path: Assets/Scenes/Juego Marvind.unity
+    guid: 2bd57b0116ea6c740966d047e57c5855
+  - enabled: 1
+    path: Assets/Scenes/Juego Tutorial.unity
+    guid: 3dc014d70a1f00048a881f6adff5e7e4
+  - enabled: 1
+    path: Assets/Scenes/Juego Norch.unity
+    guid: 5d6aa52c92f11954eba11a6654e4690e
+  - enabled: 1
+    path: Assets/Scenes/HacieElMenu.unity
+    guid: 6b5d1996f2f7ac44db8aa02a5ebce9da
   m_configObjects: {}

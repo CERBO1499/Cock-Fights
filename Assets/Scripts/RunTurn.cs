@@ -48,13 +48,26 @@ public class RunTurn : MonoBehaviour
         startTurn = false;
         ThemeButtonsOn(true);
 
-        timePrhaseSlider.maxValue = BasesManager.Instancia.TiempoFrase;
-        timePrhaseSlider.value = BasesManager.Instancia.TiempoFrase;
+        if(BasesManager.Instancia != null)
+        {
+            timePrhaseSlider.maxValue = BasesManager.Instancia.TiempoFrase;
+            timePrhaseSlider.value = BasesManager.Instancia.TiempoFrase;
 
-        timePerRhyme = BasesManager.Instancia.TiempoFrase;
+            timePerRhyme = BasesManager.Instancia.TiempoFrase;
 
-        timeRhymeSlider.maxValue = BasesManager.Instancia.TiempoFrase;
-        timeRhymeSlider.value = BasesManager.Instancia.TiempoFrase;
+            timeRhymeSlider.maxValue = BasesManager.Instancia.TiempoFrase;
+            timeRhymeSlider.value = BasesManager.Instancia.TiempoFrase;
+        }
+        else
+        {
+            timePrhaseSlider.maxValue = 4;
+            timePrhaseSlider.value = 4;
+
+            timePerRhyme = 4;
+
+            timeRhymeSlider.maxValue = 4;
+            timeRhymeSlider.value = 4;
+        }
 
         //read txt with phrase
         theWholeFileAsOneLongString = dictionaryTextFile.text;
@@ -64,10 +77,9 @@ public class RunTurn : MonoBehaviour
 
         //phrase.text = "";
 
-        for (int i = 0; i < eachLine.Count; i++)
-        {
-            //phrase.text += eachLine[i] + "\n";
-        }
+
+
+        UI.Instance.PalabrasOn(true);
     }
 
     public void MatarRunTurn()
@@ -75,6 +87,8 @@ public class RunTurn : MonoBehaviour
         startTurn = false;
         ThemeButtonsOn(false);
         enabled = false;
+
+        UI.Instance.PalabrasOn(false);
     }
 
     void Update()
@@ -108,18 +122,19 @@ public class RunTurn : MonoBehaviour
 
             if (timePerRhyme <= 0)
             {
-                timePerRhyme = BasesManager.Instancia.TiempoFrase;
+                if(BasesManager.Instancia != null) timePerRhyme = BasesManager.Instancia.TiempoFrase;
+                else timePerRhyme = 4;
                 rhymeCount++;
                 VFXUI = false;
                 //  Emite la señal de que terminó la frase.
                 try
                 {
-                    Debug.Log("Sin Pausa");
                     EnFraseTerminada(true);
+                    //Debug.Log("Sin Pausa");
                 }
                 catch
                 {
-
+                    //Debug.Log("Este es el error.");
                 }
             } 
         }

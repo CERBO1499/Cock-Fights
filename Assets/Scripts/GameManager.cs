@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,32 +6,25 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {   
     //  SINGLETON
-    private static GameManager instance;
+    public static GameManager Instance{get;set;}
 
    private void Awake()
    {
-       instance = this;
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(Instance.gameObject);
+        }
 
         ronda = 0;
         InicializarGameMng(true, ronda);
    }
-
-   public static GameManager Instance
-   {
-       get
-       {
-           if (instance == null)
-           {
-               instance = new GameManager();
-           }
-
-           return instance;
-       }
-
-   }
-
     //  SINGLETON
 
+    public bool tutorial = false;
     public string usuario1, usuario2;
     public Color color1, color2;
     public int rondasJuego = 4;
@@ -43,7 +36,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TematicaGeneral[] conceptos;
 
-    private Patron patron;
+    public Patron patron;
+
     private LevelManager lvlManager;
     private Puntaje puntaje;
     private bool player1;
@@ -53,18 +47,31 @@ public class GameManager : MonoBehaviour
     public void InicializarGameMng(bool player1, int ronda)
     {
         //patron = FindObjectOfType<Patron>();
+        PalabraE.EnPalabraEscogida -= Instance.Celebrar;
+        PalabraE.EnPalabraEscogida += Instance.Celebrar;
 
-        PalabraE.EnPalabraEscogida -= Puntuar;
-        PalabraE.EnPalabraEscogida += Puntuar;
+        RunTurn.EnFraseTerminada -= Instance.Celebrar;
+        RunTurn.EnFraseTerminada += Instance.Celebrar;
+
+        PalabraE.EnPalabraEscogida -= Instance.Puntuar;
+        PalabraE.EnPalabraEscogida += Instance.Puntuar;
+        
 
         lvlManager = GetComponent<LevelManager>();
         puntaje = GetComponent<Puntaje>();
 
-        usuario1 = BasesManager.Instancia.Usuario1;
-        usuario2 = BasesManager.Instancia.Usuario2;
+        if (BasesManager.Instancia == null) usuario1 = "Eminem";
+        else usuario1 = BasesManager.Instancia.Usuario1;
 
-        System.Random ran = new System.Random();
-        int ranConcepto = ran.Next(0, conceptos.Length);
+        if (BasesManager.Instancia == null) usuario2 = "Dr.Dre";
+        else usuario2 = BasesManager.Instancia.Usuario2;
+
+        if (usuario1 == "") usuario1 = "Eminem";
+        if (usuario2 == "") usuario2 = "Dr.Dre";
+
+        if(tutorial) usuario1 = "Ganaste";
+
+        int ranConcepto = UnityEngine.Random.Range(0, conceptos.Length);
         UI.Instance.Concepto = conceptos[ranConcepto].Concepto;
         lvlManager.Textos = conceptos[ranConcepto].PatronesAleatorios(4);
         lvlManager.Inicializar();
@@ -74,7 +81,7 @@ public class GameManager : MonoBehaviour
         string usuario = player1 ? usuario1 : usuario2;
         Color color = player1 ? color1 : color2;
 
-        StartCoroutine(UsuarioTemporal(usuario, color));
+        if(!tutorial) StartCoroutine(UsuarioTemporal(usuario, color));
 
         //NuevoPatron();
     }
@@ -94,10 +101,13 @@ public class GameManager : MonoBehaviour
     }
     public void Continuar()
     {
-        puntaje.EsLaUltima(0);
-
         //  Suma una ronda completada
         ronda++;
+
+        if(ronda >= rondasJuego - 1)
+        {
+            puntaje.EsLaUltima(0);
+        }
         //  Si no hay más rondas, muestr el ganador.
         if(ronda >= rondasJuego)
         {
@@ -110,7 +120,7 @@ public class GameManager : MonoBehaviour
             lvlManager.MatarLevelMng();
             InicializarGameMng(player1 = !player1, ronda);
 
-            Debug.Log("Ronda: " + ronda);
+            //Debug.Log("Ronda: " + ronda);
         }
     }
 
@@ -127,10 +137,27 @@ public class GameManager : MonoBehaviour
         Debug.Log("Puntaje 1: " + puntaje.Usuario1 + "\t| Puntaje 2: " + puntaje.Usuario2);
     }
 
-    void TerminarJuego()
+    public void TerminarJuego()
     {
+        PalabraE.EnPalabraEscogida -= Instance.Celebrar;
+        RunTurn.EnFraseTerminada -= Instance.Celebrar;
+        PalabraE.EnPalabraEscogida -= Instance.Puntuar;
+        
         lvlManager.runTurn.Pause = true;
         puntaje.VerificarGanador(usuario1, usuario2, color1, color2);
+    }
+    public void Celebrar(bool i)
+    {
+        if (puntaje == null) puntaje = GameManager.Instance.gameObject.GetComponent<Puntaje>();
+
+        puntaje.Celebrar(i);
+    }
+
+    public void Celebrar(string i, Intencion a)
+    {
+        if (puntaje == null) puntaje = GameManager.Instance.gameObject.GetComponent<Puntaje>();
+
+        puntaje.Celebrar(i,a);
     }
 
     IEnumerator BloqueoTemporal()

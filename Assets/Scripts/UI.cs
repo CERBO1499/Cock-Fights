@@ -62,6 +62,13 @@ public class UI : MonoBehaviour
     //  Recibe la pantalla de ganador
     [SerializeField]
     private GameObject concepto;
+    //  Recibe el texto de host
+    [SerializeField]
+    private GameObject host;
+    //  Recibe la pantalla de pausa
+    [SerializeField]
+    private GameObject pausa;
+
 
     ParticleSystem[] parSys;
     ParticleSystem.MainModule main;
@@ -89,12 +96,14 @@ public class UI : MonoBehaviour
         celeb = celebras[0].GetComponentInParent<Celebra>().gameObject;
 
         ContinuarOn(false);
+        PausaOn(false);
         BloqueoOn(false);
         TableroOn(false);
         RimasOn(false);
         UsuarioOn(false);
         CelebraOn(false);
         GanadorOn(false);
+        HostOn(false);
     }
 
     //  Define si el tablero está activo o inactivo.
@@ -120,7 +129,6 @@ public class UI : MonoBehaviour
     public void ContinuarOn(float puntaje)
     {
         continuar.SetActive(true);
-        CelebraOn(false);
 
         TextMeshProUGUI text = continuar.GetComponentInChildren<TextMeshProUGUI>();
         text.text = "Puntaje: " + puntaje.ToString();
@@ -156,19 +164,22 @@ public class UI : MonoBehaviour
     {
         int tipo = 0;
 
-        switch (celeb)
+        if(celeb != CelebrationType.Descansa)
         {
-            case CelebrationType.Breve: tipo = 0;
-                break;
-            case CelebrationType.Media: tipo = 1;
-                break;
-            case CelebrationType.Fuerte: tipo = 2;
-                break;
-        }
+            switch (celeb)
+            {
+                case CelebrationType.Breve: tipo = 0;
+                    break;
+                case CelebrationType.Media: tipo = 1;
+                    break;
+                case CelebrationType.Fuerte: tipo = 2;
+                    break;
+            }
 
-        CelebraOn(true, 0);
-        celebras[tipo].SetActive(true);
-        celebras[tipo].GetComponent<AudioSource>().Play();
+            CelebraOn(true, 0);
+            celebras[tipo].SetActive(true);
+            celebras[tipo].GetComponent<AudioSource>().Play();
+        }
     }
 
     public void CelebraOn(bool state)
@@ -203,7 +214,7 @@ public class UI : MonoBehaviour
 
         //  Muestra el nombre del usuario.
         TextMeshProUGUI[] text = ganador.GetComponentsInChildren<TextMeshProUGUI>();
-        text[1].text = usuario;
+        text[1].text = usuario + "!";
         text[2].text = puntaje.ToString() + " puntos";
 
         //  Muestra el color del usuario.
@@ -229,5 +240,48 @@ public class UI : MonoBehaviour
     {
         //  Activa la pantalla del ganador.
         ganador.SetActive(false);
+    }
+
+    public void HostOn(CelebrationType celeb)
+    {
+        AudioSource audio = host.GetComponent<AudioSource>();
+        TextMeshProUGUI text = host.GetComponentInChildren<TextMeshProUGUI>();
+        string grito = "";
+
+        switch (celeb)
+        {
+            case CelebrationType.Breve: 
+                grito = "Ohhhh";
+                break;
+
+            case CelebrationType.Media:
+                grito = "¡Díselo!";
+                break;
+
+            case CelebrationType.Fuerte:
+                grito = "¡RUIDOOOO!";
+                break;
+
+            case CelebrationType.Descansa:
+                grito = "";
+                break;
+        }
+
+        //if(grito!="") audio.Play();
+
+        text.enabled = true;
+        text.text = grito;
+    }
+
+    public void HostOn(bool state)
+    {
+        TextMeshProUGUI text = host.GetComponentInChildren<TextMeshProUGUI>();
+        text.text = "";
+        text.enabled = false;
+    }
+
+    public void PausaOn(bool state)
+    {
+        pausa.SetActive(state);
     }
 }

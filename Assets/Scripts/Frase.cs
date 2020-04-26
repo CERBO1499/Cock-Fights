@@ -54,6 +54,7 @@ public class Frase : MonoBehaviour
 
         //espacios[numEspacio].Inicializar();
         //espacios[numEspacio].Habilitado(true);
+        if(espacio == null) espacio = GetComponentInChildren<Espacio>();
         espacio.Inicializar();
         espacio.Habilitado(true);
 
@@ -134,7 +135,7 @@ public class Frase : MonoBehaviour
                 break;
 
             case 2:
-                y = (datos.rengActual[indice] > 1) ? -0.4f : 0.4f;
+                y = (datos.rengActual[indice] > 1) ? -0.25f : 0.4f;
                 break;
 
             case 3:

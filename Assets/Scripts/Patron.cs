@@ -14,9 +14,6 @@ public class Patron : MonoBehaviour
     [SerializeField]
     private float velMov = 3;
 
-    private string patron;
-    private float tiempoLimite;
-    private float tiempoRima;
     //  Frases del patrón.
     private Frase[] frases;
     //  Índice de la frase actual.
@@ -29,6 +26,7 @@ public class Patron : MonoBehaviour
 
     LectorDeTexto lector;
 
+    private static Transform tra;
 
     public bool probando = false;
 
@@ -51,9 +49,11 @@ public class Patron : MonoBehaviour
 
     public void Inicializar()
     {
+        RunTurn.EnFraseTerminada -= PasarFrase;
         RunTurn.EnFraseTerminada += PasarFrase;
 
         lector = GetComponent<LectorDeTexto>();
+        tra = GetComponent<Transform>();
 
         CambiarLlegada(posInicial);
 
@@ -90,11 +90,6 @@ public class Patron : MonoBehaviour
         //  Verifica si hay frases accesibles.
         if (numFrase < frases.Length)
         {
-            //  Anuncia la última frase.
-            if(numFrase == frases.Length - 1)
-            {
-                EnUltima(1);
-            }
             //  Desplaza el patrón hacia arriba.
             CambiarLlegada(posSiguiente, 0);
             //  Activa la siguiente frase.
@@ -112,6 +107,8 @@ public class Patron : MonoBehaviour
             //  Apaga el tablero.
             UI.Instance.TableroOn(false);
         }
+
+        //Debug.Log("Llamada a patrón.");
     }
 
     public void CambiarLlegada(float y)
@@ -121,7 +118,9 @@ public class Patron : MonoBehaviour
 
     public void CambiarLlegada(float y, int i)
     {
-        llegada = transform.position + (Vector3.up * y);
+        if (tra == null) gameObject.GetComponent<Transform>();
+
+        llegada = tra.position + (Vector3.up * y);
     }
 
     private void Update()
@@ -148,7 +147,9 @@ public class Patron : MonoBehaviour
             frases[i].PalabrasFrase = palabras[i];
             frases[i].IntencionFrase = intenciones[i];
 
-            frases[i].UbicarEspacio(lector, i,lector.CaracteresXRenglon, lector.InicioEspacios[i]);
+            frases[i].UbicarEspacio(lector, i, lector.CaracteresXRenglon, lector.InicioEspacios[i]);
         }
+
+        TextToSpeech.Instance.Phrases = _frases;
     }
 }

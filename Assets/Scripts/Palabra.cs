@@ -16,4 +16,5 @@ public abstract class Palabra : MonoBehaviour
     */
     public abstract void Inicializar(string palabra, Intencion intencion);
     public abstract void Escoger();
+    
 }

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\USUARIO\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\USUARIO\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Cock Fights.1454869169.00" t="ExcludeRecursive" />
-    <e p="E:\TALLER 6\Cock Fights" t="IncludeRecursive">
+    <e p="C:\Users\USUARIO\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Cock Fights.-1770604429.00" t="ExcludeRecursive" />
+    <e p="E:\1.SEMESTRE 7\TALLER 6\Cock Fights" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="CodeMonkey" t="Include">
@@ -39,12 +39,18 @@
           <e p="Background.cs" t="Include" />
           <e p="BasesManager.cs" t="Include" />
           <e p="Celebra.cs" t="Include" />
+          <e p="Command" t="Include">
+            <e p="ActivarAudioCommand.cs" t="Include" />
+            <e p="AudioActivationGeneral.cs" t="Include" />
+            <e p="ICommand.cs" t="Include" />
+          </e>
           <e p="DropZone.cs" t="Include" />
           <e p="Espacio.cs" t="Include" />
           <e p="Frase.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="GanadorOn.cs" t="Include" />
           <e p="Gestures3DCollider.cs" t="Include" />
+          <e p="HaciaElMenu.cs" t="Include" />
           <e p="LaunchedWord.cs" t="Include" />
           <e p="Launcher.cs" t="Include" />
           <e p="LectorDeTexto.cs" t="Include" />
@@ -53,26 +59,43 @@
           <e p="Palabra.cs" t="Include" />
           <e p="PalabraE.cs" t="Include" />
           <e p="Patron.cs" t="Include" />
+          <e p="Patterns" t="Include">
+            <e p="Singleton.cs" t="Include" />
+          </e>
           <e p="Posibilidades.cs" t="Include" />
           <e p="Puntaje.cs" t="Include" />
-          <e p="Puntuacion.cs" t="Include" />
           <e p="Releaser.cs" t="Include" />
           <e p="RhymeManager.cs" t="Include" />
           <e p="RunTurn.cs" t="Include" />
           <e p="SceneMan.cs" t="Include" />
           <e p="TematicaGeneral.cs" t="Include" />
           <e p="TempoBase.cs" t="Include" />
+          <e p="TTS" t="Include">
+            <e p="TextToSpeech.cs" t="Include" />
+          </e>
+          <e p="Tutorial.cs" t="Include" />
           <e p="TutorialManager.cs" t="Include" />
           <e p="UI.cs" t="Include" />
+          <e p="VFXBUTTONS.cs" t="Include" />
         </e>
         <e p="TextFiles" t="Include">
-          <e p="Fobia 2.txt" t="Include" />
-          <e p="Fobia 3.txt" t="Include" />
-          <e p="Fobia.txt" t="Include" />
-          <e p="Robótica 2.txt" t="Include" />
-          <e p="Robótica.txt" t="Include" />
-          <e p="Tik-Tok 2.txt" t="Include" />
-          <e p="Tik-Tok.txt" t="Include" />
+          <e p="Arte" t="Include">
+            <e p="Cine.txt" t="Include" />
+            <e p="Cuadro.txt" t="Include" />
+            <e p="Los artistas.txt" t="Include" />
+            <e p="Películas.txt" t="Include" />
+            <e p="Pintores.txt" t="Include" />
+            <e p="Rembrandt.txt" t="Include" />
+            <e p="Surrealismo.txt" t="Include" />
+            <e p="Tiempo.txt" t="Include" />
+          </e>
+          <e p="Espacio exterior" t="Include">
+            <e p="Abducción.txt" t="Include" />
+            <e p="Dimensión.txt" t="Include" />
+            <e p="OVNI.txt" t="Include" />
+            <e p="Universo.txt" t="Include" />
+            <e p="Vieja.txt" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">
@@ -137,6 +160,25 @@
           </e>
           <e p="Sprites" t="Include">
             <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+        <e p="unity-ui-extensions" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Effects" t="Include">
+              <e p="UIParticleSystem.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="UI Particle Add.shader" t="Include" />
+            <e p="UI Particle AddMultiply.shader" t="Include" />
+            <e p="UI Particle AddSmooth.shader" t="Include" />
+            <e p="UI Particle Alpha Blend.shader" t="Include" />
+            <e p="UI Particle Blend.shader" t="Include" />
+            <e p="UI Particle Multiply.shader" t="Include" />
+            <e p="UI Particle MultiplyDouble.shader" t="Include" />
+            <e p="UI Particle Premultiply Blend.shader" t="Include" />
+            <e p="UI Particle VertexLit Blended.shader" t="Include" />
+            <e p="UISoftAdditive.shader" t="Include" />
           </e>
         </e>
       </e>

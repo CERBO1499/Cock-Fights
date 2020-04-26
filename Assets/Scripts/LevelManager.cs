@@ -35,6 +35,7 @@ public class LevelManager : MonoBehaviour
 
     private float _timeToSelectTheme;
     private bool VFXRYME = false;
+    private bool rimaEscogida = false;
 
     public bool startTimer;
 
@@ -61,6 +62,7 @@ public class LevelManager : MonoBehaviour
     public void Inicializar()
     {
         enabled = true;
+        rimaEscogida = false;
 
         MatarLevelMng();
 
@@ -68,10 +70,12 @@ public class LevelManager : MonoBehaviour
         SelectThemeButton(false);
         runTurn.enabled = false;
 
-        audioSource.clip = BasesManager.Instancia.Instrumental;
+        if(BasesManager.Instancia != null)audioSource.clip = BasesManager.Instancia.Instrumental;
+        audioSource.time = 0;
         audioSource.Play();
 
-        _timeToSelectTheme = BasesManager.Instancia.TiempoRimas;
+        if(BasesManager.Instancia != null)_timeToSelectTheme = BasesManager.Instancia.TiempoRimas;
+        else _timeToSelectTheme = 6.5f;
 
         //timePerPrhase = timePerRhyme / prhaseCount;
         myTime = _timeToSelectTheme;
@@ -95,6 +99,8 @@ public class LevelManager : MonoBehaviour
 
     public void MatarLevelMng()
     {
+        rimaEscogida = false;
+
         audioSource.Stop();
 
         runTurn.Inicializar();
@@ -119,7 +125,7 @@ public class LevelManager : MonoBehaviour
                 VFXRYME = true;
 
 
-                print("PArticulasFuncionando");
+                //print("PArticulasFuncionando");
             }
             
             if (_timeToSelectTheme <= 0)
@@ -127,15 +133,14 @@ public class LevelManager : MonoBehaviour
 
                 //game over
                 RunTurn();
-                
-
-                //  Desactiva el aciso de improvisa.
-                UI.Instance.ImprovisaOn(false);
 
                 startTimer = false;
                 UI.Instance.RimasOn(false);
                 VFXRYME = false;
 
+                if(!rimaEscogida) SelectThemeButton(UnityEngine.Random.Range(0, themeButtons.Length));
+                //  Desactiva el aviso de improvisa.
+                UI.Instance.ImprovisaOn(false);
             }
         }
 
@@ -164,8 +169,12 @@ public class LevelManager : MonoBehaviour
 
         //runTurn.ThemeButtonsOn(false);
         runTurn.startTurn = true;
+        audioSource.time = 6.4f; 
 
         runTurn.Theme = theme;
+
+        TextToSpeech.Instance.SetTTS();
+        TextToSpeech.Instance.Speak();
 
         this.enabled = false;
     }
@@ -229,17 +238,20 @@ public class LevelManager : MonoBehaviour
     /// <param name="button"></param>
     public void SelectThemeButton(int button)
     {
+        rimaEscogida = true;
+
         UI.Instance.TableroOn(true);
         UI.Instance.ImprovisaOn(true);
         EnableThemeButtons(false);
         themeButtons[button].transform.GetChild(0).gameObject.SetActive(true);
-       // ActiveGlobalTimer();
+        // ActiveGlobalTimer();
 
         /*
         patrones[button].SetActive(true);
         patrones[button].GetComponent<Patron>().Inicializar();
         */
 
+        runTurn.Pause = false;
         patron.gameObject.SetActive(true);
         patron.TextoTxt = Textos[button];
         patron.Inicializar();

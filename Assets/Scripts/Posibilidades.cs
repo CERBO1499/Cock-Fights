@@ -44,8 +44,8 @@ public struct Posibilidades
         Intencion[] intenciones = new Intencion[NUM_PALABRAS];
 
         intenciones[0] = Intencion.agresivo;
-        intenciones[1] = Intencion.comico;
-        intenciones[2] = Intencion.ego;
+        intenciones[1] = Intencion.ego;
+        intenciones[2] = Intencion.comico;
 
         return intenciones;
     } 

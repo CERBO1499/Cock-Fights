@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public enum CelebrationType { Breve, Media, Fuerte }
+public enum CelebrationType { Breve, Media, Fuerte, Descansa }
 
 public class Puntaje : MonoBehaviour
 {
@@ -11,22 +11,48 @@ public class Puntaje : MonoBehaviour
     public float tiempoCelebracion;
     public static Intencion intFrase;
 
-    private float[] puntajes;
+    private static float[] puntajes;
 
     private float puntajeAnterior;
 
+    private bool palabraEscogida;
+
     public float Puntos { get; set; }
     public int Ultima { get; set; }
+    public CelebrationType Celebra { get; set; }
+
     public void Awake()
     {
-        Patron.EnUltima += EsLaUltima;
-
         puntajes = new float[2];
+
+        for(int i = 0; i < puntajes.Length; i++)
+        {
+            puntajes[i] = 0;
+        }
 
         puntajeAnterior = 0f;
         Ultima = 0;
 
-        RunTurn.EnFraseTerminada += Celebrar;
+        palabraEscogida = false;
+    }
+
+    public void Inicializar()
+    {
+        puntajes = new float[2];
+
+        for(int i = 0; i < puntajes.Length; i++)
+        {
+            puntajes[i] = 0;
+        }
+
+        puntajeAnterior = 0f;
+        Ultima = 0;
+
+        /*//  Anuncia la última frase.
+            if(numFrase == frases.Length - 1)
+            {
+                EnUltima(1);
+            }*/
     }
 
     public void SumarPuntaje(Intencion intPalabra, int usuario)
@@ -38,38 +64,58 @@ public class Puntaje : MonoBehaviour
 
     public void Celebrar(bool i)
     {
+        if(palabraEscogida)
+        {
+            StartCoroutine(Celebracion(0));
+        }
+        palabraEscogida = false;
+    }
+
+    public void Celebrar(string i, Intencion a)
+    {
+        palabraEscogida = true;
+
+        Puntos = Puntuar(intFrase, a);
+
         bool encadenado = false;
+        Celebra = CelebrationType.Descansa;
 
         if (Puntos == 1)
         {
-            StartCoroutine(Celebracion(CelebrationType.Fuerte));
+            Celebra = CelebrationType.Fuerte;
         }
         else if (Puntos == 0.5f)
         {
             if (puntajeAnterior == Puntos)
             {
-                StartCoroutine(Celebracion(CelebrationType.Fuerte));
+                Celebra = CelebrationType.Fuerte;
                 encadenado = true;
             }
             else
             {
-                StartCoroutine(Celebracion(CelebrationType.Media));
+                Celebra = CelebrationType.Media;
             }
         }
         else if (Puntos == 0.25f)
         {
             if (puntajeAnterior == Puntos)
             {
+                Celebra = CelebrationType.Descansa;
                 encadenado = true;
             }
             else
             {
-                StartCoroutine(Celebracion(CelebrationType.Breve));
+                Celebra = CelebrationType.Breve;
             }
         }
 
         if (!encadenado) puntajeAnterior = Puntos;
         else puntajeAnterior = 0;
+
+        //StartCoroutine(Celebracion());
+
+        //Debug.Log("Celebración: " + Celebra);
+        //Debug.Log("Encadenado: " + encadenado);
     }
 
     public float Puntuar(Intencion frase, Intencion palabra)
@@ -103,17 +149,28 @@ public class Puntaje : MonoBehaviour
         intFrase = intencion;
     }
 
-    IEnumerator Celebracion(CelebrationType tipoCelebracion)
+    IEnumerator Celebracion()
     {
-        UI.Instance.CelebraOn(tipoCelebracion);
+        UI.Instance.HostOn(Celebra);
         yield return new WaitForSeconds(tiempoCelebracion);
-        if (Ultima == 1) Ultima += 1;
-        else if (Ultima >= 2)
+        UI.Instance.HostOn(false);
+    }
+
+    IEnumerator Celebracion(int i)
+    {
+        UI.Instance.CelebraOn(Celebra);
+        yield return new WaitForSeconds(tiempoCelebracion);
+        UI.Instance.CelebraOn(false);
+        
+        if (Ultima >= 3)
         {
             UI.Instance.CelebraOn(false, 0);
-            EsLaUltima(0);
+            Ultima = 0;
         }
-        else UI.Instance.CelebraOn(false);
+
+        Ultima += 1;
+
+        //Debug.Log("Última: " + Ultima);
     }
 
     public void VerificarGanador(string usuario1, string usuario2, Color color1, Color color2)
@@ -136,7 +193,7 @@ public class Puntaje : MonoBehaviour
         color = player1 ? color1 : color2;
         puntaje = player1 ? Usuario1 : Usuario2;
 
-        UI.Instance.PerdedorOn(usuario, color, puntaje);
+        if(FindObjectOfType<Tutorial>() == null) UI.Instance.PerdedorOn(usuario, color, puntaje);
     }
 
     public void EsLaUltima(int val)
