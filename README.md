@@ -33,5 +33,6 @@ link a lista de requerimientos funcionales:
 https://upbeduco-my.sharepoint.com/:w:/r/personal/jose_agudeloa_upb_edu_co/_layouts/15/Doc.aspx?sourcedoc=%7B277B742F-34EE-4EFD-A6E7-404C66F5B494%7D&file=Batallas%20de%20rap.docx&action=default&mobileredirect=true
 
 Link a ejecutable
+Descargar batallas raperas version 0-3-6
 https://upbeduco-my.sharepoint.com/:f:/g/personal/carlos_rojasb_upb_edu_co/Ep4WRHTa_vFDj6muIBOTzSwB74isEZWWzK7yM0UyLxqzJQ?e=xugbxs
 
