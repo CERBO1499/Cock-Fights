@@ -214,7 +214,7 @@ public class UI : MonoBehaviour
 
         //  Muestra el nombre del usuario.
         TextMeshProUGUI[] text = ganador.GetComponentsInChildren<TextMeshProUGUI>();
-        text[1].text = usuario + "!";
+        text[1].text = "¡" + usuario + "!";
         text[2].text = puntaje.ToString() + " puntos";
 
         //  Muestra el color del usuario.

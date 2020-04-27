@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     public Color color1, color2;
     public int rondasJuego = 4;
 
+    [SerializeField]
+    private AudioSource Walla;
 
     [SerializeField]
     private float tiempoBloqueo, tiempoUsuario;
