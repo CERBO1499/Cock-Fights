@@ -34,3 +34,9 @@ Link a lista de requerimientos funcionales:
 https://upbeduco-my.sharepoint.com/:w:/r/personal/jose_agudeloa_upb_edu_co/_layouts/15/Doc.aspx?sourcedoc=%7B277B742F-34EE-4EFD-A6E7-404C66F5B494%7D&file=Batallas%20de%20rap.docx&action=default&mobileredirect=true
 
 Link al demo del juego: https://play.google.com/store/apps/details?id=com.Gameius.BatallasRaperas
+	¡ATENCIÓN! - La versión disponible en la Play Store es la desarrollada en Taller VI, por lo tanto difiere de la presentada para 	esta entrega en algunos aspectos. El principal es la tienda, la cual no planteamos incluir para la versión subida al link 		anterior. Sin embargo ambas son lo suficientemente similares para considerar la bonificación por haber publicado el juego.
+
+Link a la versión con tienda: https://upbeduco-my.sharepoint.com/:f:/g/personal/carlos_rojasb_upb_edu_co/Ep4WRHTa_vFDj6muIBOTzSwB74isEZWWzK7yM0UyLxqzJQ?e=9jxwh6
+
+El usuario recibe una moneda por cada cien puntos conseguidos en el juego. En el caso de dos jugadores, se entregan las monedas correspondientes al puntaje del ganador.
+El feedback del cambio en las monedas no es mostrado durante el juego (simplemente resta y suma el número de monedas).
