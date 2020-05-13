@@ -68,7 +68,9 @@ public class UI : MonoBehaviour
     //  Recibe la pantalla de pausa
     [SerializeField]
     private GameObject pausa;
-
+    //  Recibe la pantalla de empate
+    [SerializeField]
+    private GameObject empate;
 
     ParticleSystem[] parSys;
     ParticleSystem.MainModule main;
@@ -104,6 +106,7 @@ public class UI : MonoBehaviour
         CelebraOn(false);
         GanadorOn(false);
         HostOn(false);
+        EmpateOn(false);
     }
 
     //  Define si el tablero está activo o inactivo.
@@ -172,7 +175,11 @@ public class UI : MonoBehaviour
                     break;
                 case CelebrationType.Media: tipo = 1;
                     break;
-                case CelebrationType.Fuerte: tipo = 2;
+                case CelebrationType.Fuerte: 
+                {
+                    tipo = 2;
+                    Handheld.Vibrate();
+                }
                     break;
             }
 
@@ -222,6 +229,12 @@ public class UI : MonoBehaviour
         imagen.color = color;
     }
 
+    public void GanadorOn(bool state)
+    {
+        //  Activa la pantalla del ganador.
+        ganador.SetActive(false);
+    }
+
     public void PerdedorOn(string usuario, Color color, float puntaje)
     {
         //  Muestra el nombre del usuario.
@@ -234,12 +247,6 @@ public class UI : MonoBehaviour
     {
         //  Muestra el nombre del usuario.
         perdedor.gameObject.SetActive(false);
-    }
-
-    public void GanadorOn(bool state)
-    {
-        //  Activa la pantalla del ganador.
-        ganador.SetActive(false);
     }
 
     public void HostOn(CelebrationType celeb)
@@ -283,5 +290,21 @@ public class UI : MonoBehaviour
     public void PausaOn(bool state)
     {
         pausa.SetActive(state);
+    }
+
+    public void EmpateOn(string usuario1, string usuario2, float puntuacion)
+    {
+        empate.SetActive(true);
+
+        TextMeshProUGUI[] textos = empate.GetComponentsInChildren<TextMeshProUGUI>();
+
+        textos[0].text = usuario1;
+        textos[1].text = usuario2;
+        textos[2].text = puntuacion.ToString() + " puntos";
+    }
+
+    public void EmpateOn(bool off)
+    {
+        if(empate != null) empate.SetActive(false);
     }
 }

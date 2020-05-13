@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.IO;
 
 [RequireComponent(typeof(AudioSource))]
-public class BasesManager : MonoBehaviour
+public class BasesManager : GuardaBases
 {
+    private const float TIMEPO_PARA_ESCOGER_TEMA = 6.6f;
+    public const string NOMBRE_DE_LISTA = "Lista de bases.json";
+
     //  SINGLETON
     public static BasesManager Instancia { get; private set; }
 
     public string Usuario1 { get; set; }
     public string Usuario2 { get; set; }
+    public int Monedas { get; set; }
+    public float TiempoParaEscogerTema{get => TIMEPO_PARA_ESCOGER_TEMA;}
 
 
     public void Awake()
@@ -27,6 +33,11 @@ public class BasesManager : MonoBehaviour
 
         Instancia = this;
 
+        //PlayerPrefs.SetInt("Monedas",10000);
+        Monedas = PlayerPrefs.GetInt("Monedas");
+
+        Cargar(NOMBRE_DE_LISTA);
+
         Inicializar();
     }
 
@@ -34,55 +45,45 @@ public class BasesManager : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI nombre;
-
-    [SerializeField]
-    TempoBase[] bases = new TempoBase[1];
+    TextMeshProUGUI monedas;
 
     private AudioSource parlante;
-    private int baseActual;
 
     public void Inicializar()
     {
         DontDestroyOnLoad(this);
 
+        monedas = GameObject.FindGameObjectWithTag("Monedas").GetComponent<TextMeshProUGUI>();
+        if(monedas != null) monedas.text = Monedas.ToString();
+        
         parlante = GetComponent<AudioSource>();
 
-        BaseAleatoria();
+        BaseAleatoria();        
     }
-
-    public void BaseSiguiente()
-    {
-        baseActual++;
-        if (baseActual >= bases.Length) baseActual = 0;
-
-        CambiarBase();
-    }
-
-    public void BaseAnterior()
-    {
-        baseActual--;
-        if (baseActual < 0) baseActual = bases.Length - 1;
-
-        CambiarBase();
-    }
-
-    public void BaseAleatoria()
-    {
-        baseActual = Random.Range(0, bases.Length);
-
-        CambiarBase();
-    }
-
-    public void CambiarBase()
+public override void CambiarBase()
     {
         parlante.Stop();
-        parlante.clip = bases[baseActual].instrumental;
-        if(nombre != null) nombre.text = bases[baseActual].nombre;
-        parlante.time = bases[baseActual].tiempoRimas - 0.2f;
+        if(nombre != null) 
+        {
+            nombre.text = bases[baseActual].nombre;
+
+            if(bases[baseActual].comprada) parlante.clip = Resources.Load<AudioClip>(bases[baseActual].RutaInstrumental);
+        }
+        parlante.time =  TIMEPO_PARA_ESCOGER_TEMA - 0.7f;
         parlante.Play();
 
         //Debug.Log(baseActual);
     }
+public void CambiarBase(TempoBase tmpBase)
+    {
+        parlante.Stop();
+        parlante.clip = Resources.Load<AudioClip>(tmpBase.RutaInstrumental);
+       // if(nombre != null) nombre.text = bases[baseActual].nombre;
+        parlante.time = TIMEPO_PARA_ESCOGER_TEMA - 0.7f;
+        parlante.Play();
+
+        //Debug.Log(baseActual);
+    }  
 
     public void Detener()
     {
@@ -107,9 +108,23 @@ public class BasesManager : MonoBehaviour
         Usuario2 = inputs[1].text;
     }
 
-    public float TiempoRimas { get => bases[baseActual].tiempoRimas; }
+    public void PuntajeAMonedas(float puntaje)
+    {
+        Monedas += (int)(puntaje/100f);
+        PlayerPrefs.SetInt("Monedas", Monedas);
+        
+        if(monedas != null) monedas.text = Monedas.ToString();
+    }
 
-    public float TiempoFrase { get => bases[baseActual].tiempoFrase; }
+    public void Comprar(int precio)
+    {
+        Monedas -= precio;
+        PlayerPrefs.SetInt("Monedas", Monedas);
+    }
 
-    public AudioClip Instrumental { get => bases[baseActual].instrumental; }
+    public void AddSong(TempoBase song)
+    {
+        bases.Add(song);
+    }
+    public AudioClip Instrumental { get => Resources.Load<AudioClip>(bases[baseActual].RutaInstrumental); }
 }

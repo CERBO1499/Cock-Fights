@@ -71,11 +71,11 @@ public class LevelManager : MonoBehaviour
         runTurn.enabled = false;
 
         if(BasesManager.Instancia != null)audioSource.clip = BasesManager.Instancia.Instrumental;
+        audioSource.Stop();
         audioSource.time = 0;
         audioSource.Play();
 
-        if(BasesManager.Instancia != null)_timeToSelectTheme = BasesManager.Instancia.TiempoRimas;
-        else _timeToSelectTheme = 6.5f;
+        _timeToSelectTheme = BasesManager.Instancia.TiempoParaEscogerTema;
 
         //timePerPrhase = timePerRhyme / prhaseCount;
         myTime = _timeToSelectTheme;

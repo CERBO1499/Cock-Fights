@@ -10,7 +10,23 @@ public class AudioActivationGeneral : MonoBehaviour
    public ICommand actvieAudio;
     private AudioSource reproductor;
    [SerializeField] private AudioClip [] temas;
-   private void Awake()
+   
+   /*private void Awake()
+   {
+      if (Instance == null)
+      {
+         Instance = this;
+         DontDestroyOnLoad(gameObject);
+      }
+      else
+      {
+         Destroy(Instance.gameObject);
+      }
+
+      Instance = this;
+     
+   }
+   /*private void Awake()
    {
       if (Instance == null)
       {
@@ -18,10 +34,11 @@ public class AudioActivationGeneral : MonoBehaviour
          DontDestroyOnLoad(gameObject);
       }
       sound = GetComponent<AudioSource>();
-   }
+   }*/
 
    private void Start()
    {
+      sound = GetComponent<AudioSource>();
       actvieAudio=new ActivarAudioCommand(this,temas);
    }
 
