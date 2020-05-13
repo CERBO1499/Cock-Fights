@@ -74,16 +74,12 @@ MonoBehaviour:
     nombre: Boogeyman
     tiempoRimas: 6.6
     tiempoFrase: 4
-  - instrumental: {fileID: 8300000, guid: 8cde28caf178674418382c4ae128f283, type: 3}
-    nombre: Drip
+  - instrumental: {fileID: 8300000, guid: 4e75a6bcd6e28ff44a10e116cea5ebc0, type: 3}
+    nombre: Strong
     tiempoRimas: 6.6
     tiempoFrase: 4
   - instrumental: {fileID: 8300000, guid: ff1365ed84d413e4e96dfc7c0790d790, type: 3}
     nombre: Apart
-    tiempoRimas: 6.6
-    tiempoFrase: 4
-  - instrumental: {fileID: 8300000, guid: 4e75a6bcd6e28ff44a10e116cea5ebc0, type: 3}
-    nombre: Strong
     tiempoRimas: 6.6
     tiempoFrase: 4
 --- !u!82 &1063224181831345377
@@ -98,7 +94,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.75
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0

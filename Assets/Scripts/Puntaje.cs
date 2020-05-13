@@ -175,25 +175,33 @@ public class Puntaje : MonoBehaviour
 
     public void VerificarGanador(string usuario1, string usuario2, Color color1, Color color2)
     {
-        bool player1 = false;
+        if(Usuario1 == Usuario2) UI.Instance.EmpateOn(usuario1, usuario2, Usuario1);
+        else
+        {
+            bool player1 = false;
 
-        if (Usuario1 > Usuario2) player1 = true;
-        else if (Usuario2 > Usuario1) player1 = false;
-        else player1 = true;
+            if (Usuario1 > Usuario2) player1 = true;
+            else if (Usuario1 < Usuario2) player1 = false;
+        
+            string usuario = player1 ? usuario1 : usuario2;
+            Color color = player1 ? color1 : color2;
+            float puntaje = player1 ? Usuario1 : Usuario2;
 
-        string usuario = player1 ? usuario1 : usuario2;
-        Color color = player1 ? color1 : color2;
-        float puntaje = player1 ? Usuario1 : Usuario2;
+            UI.Instance.GanadorOn(usuario, color, puntaje);
 
-        UI.Instance.GanadorOn(usuario, color, puntaje);
+            BasesManager.Instancia.PuntajeAMonedas(puntaje);
 
-        player1 = !player1;
+            player1 = !player1;
 
-        usuario = player1 ? usuario1 : usuario2;
-        color = player1 ? color1 : color2;
-        puntaje = player1 ? Usuario1 : Usuario2;
+            usuario = player1 ? usuario1 : usuario2;
+            color = player1 ? color1 : color2;
+            puntaje = player1 ? Usuario1 : Usuario2;
 
-        if(FindObjectOfType<Tutorial>() == null) UI.Instance.PerdedorOn(usuario, color, puntaje);
+            if(FindObjectOfType<Tutorial>() == null)
+            {
+                UI.Instance.PerdedorOn(usuario, color, puntaje);
+            } 
+        }
     }
 
     public void EsLaUltima(int val)

@@ -66,6 +66,10 @@ public class ManagerScene : MonoBehaviour
         SceneManager.LoadScene("HacieElMenu");
     }
 
+    public void HaciaLaTienda()
+    {
+        SceneManager.LoadScene("Tienda");
+    }
     public void PausaActivada(bool estado)
     {
         if(estado) GameManager.Instance.GetComponent<AudioSource>().Pause();

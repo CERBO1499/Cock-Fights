@@ -49,16 +49,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901d320069d9b714d9721b03a991a307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorial: 0
   usuario1: A
   usuario2: B
-  color1: {r: 0.18431371, g: 0.5043484, b: 1, a: 1}
+  color1: {r: 0.21560161, g: 0.22827972, b: 0.8962264, a: 1}
   color2: {r: 0.8301887, g: 0.2579278, b: 0.246707, a: 1}
-  rondasJuego: 4
-  tiempoBloqueo: 5
-  tiempoUsuario: 3
-  tematica:
-    tematica: 
-    patrones: []
+  rondasJuego: 2
+  Walla: {fileID: 0}
+  tiempoBloqueo: 2.5
+  tiempoUsuario: 1.5
+  conceptos:
+  - concepto: Arte
+    patrones:
+    - {fileID: 4900000, guid: 649d466c9f4bb4c44adda60d207bbea3, type: 3}
+    - {fileID: 4900000, guid: 5089eb8132f9dbc45bcf0f3b2b1c4642, type: 3}
+    - {fileID: 4900000, guid: 6d3b984fda747694d999d76b8421a100, type: 3}
+    - {fileID: 4900000, guid: 5ed742ce352a6654e9fc890127bbfb65, type: 3}
+    - {fileID: 4900000, guid: fecc2535cf436264297e0b90b1aaf23f, type: 3}
+    - {fileID: 4900000, guid: 13a37aaad112d214f8eb94094e48a63d, type: 3}
+    - {fileID: 4900000, guid: 83996ce06aba1494aaefa22727a107ba, type: 3}
+    - {fileID: 4900000, guid: 9fc35680a623fa747836e26ba7320e32, type: 3}
+  - concepto: Espacio exterior
+    patrones:
+    - {fileID: 4900000, guid: e78905862e6d9c945b342574f75a188e, type: 3}
+    - {fileID: 4900000, guid: db4ce7c07482695449f264c75b4feade, type: 3}
+    - {fileID: 4900000, guid: 876acb9f7c1cbf54d827b51baf71d814, type: 3}
+    - {fileID: 4900000, guid: e2d169e659bba604bb756b99e4a4895a, type: 3}
+    - {fileID: 4900000, guid: 0958142f1d0c9d6409261f64678e55ba, type: 3}
+    - {fileID: 4900000, guid: 64c3bc43b250fdd449e8d0e82959ccec, type: 3}
+    - {fileID: 4900000, guid: 72fa6aa07856bbd45bcfa090eb4d4864, type: 3}
+    - {fileID: 4900000, guid: 5302598ba3d9cb443977ed946a403245, type: 3}
+  - concepto: "Tecnolog\xEDa"
+    patrones:
+    - {fileID: 4900000, guid: cbe1f0bff50b32740aae373e7d8656e5, type: 3}
+    - {fileID: 4900000, guid: 15c3548ef844a424a9a0a02a486da72a, type: 3}
+    - {fileID: 4900000, guid: 89156c6df8da50f46b0c5ee87e83bf1a, type: 3}
+    - {fileID: 4900000, guid: 6887d3fce72e4b84c95e6fbab50a68c9, type: 3}
+    - {fileID: 4900000, guid: ddbb21945a32d634ba83f1c3f3455cac, type: 3}
+    - {fileID: 4900000, guid: 72e964ed193a2db428a0589285dbd3af, type: 3}
+    - {fileID: 4900000, guid: 795116b9a59f7de42bcd4f1d37595837, type: 3}
+  - concepto: Dinero
+    patrones:
+    - {fileID: 4900000, guid: 1e6c204d1f31ff54f8828ddb050368a8, type: 3}
+    - {fileID: 4900000, guid: 60ef1d5d2a3ae4d40bdb40ff040e2463, type: 3}
+    - {fileID: 4900000, guid: 4adf4711d1bae1d43ba6d3354473e903, type: 3}
+    - {fileID: 4900000, guid: d0b0642578b40f746aa7fb6841dc6320, type: 3}
+    - {fileID: 4900000, guid: 4a6e8efbfa5281641909fe48f2bb5ebc, type: 3}
+    - {fileID: 4900000, guid: 8055ca32b1a2e484692efff68fcad3c5, type: 3}
+    - {fileID: 4900000, guid: dd6d2b3da0610ac4b8022f6b083bbb44, type: 3}
+    - {fileID: 4900000, guid: b5a8e9690ed535a41b7e47f4704226d5, type: 3}
+  patron: {fileID: 0}
 --- !u!114 &1532853292679942597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1532853292679942596}
-  audioClip: {fileID: 8300000, guid: de4e13915183e134d8bab0af63961f97, type: 3}
+  audioClip: {fileID: 8300000, guid: aa598ff7ac777c2499eb3ae32e04d1f9, type: 3}
   theme: 
   themeSelected: 0
   timeSlider: {fileID: 0}
@@ -82,7 +122,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   patron: {fileID: 0}
-  timeToSelectTheme: 13
+  timeToSelectTheme: 15.7
   timePerRhyme: 11
   prhaseCount: 4
   timePerPrhase: 0
@@ -108,8 +148,8 @@ MonoBehaviour:
   timePrhaseSlider: {fileID: 0}
   timeRhymeSlider: {fileID: 0}
   timePerPrhase: 11
-  timePerRhyme: 3.5
-  initialTimePerRhyme: 3.5
+  timePerRhyme: 4.1
+  initialTimePerRhyme: 4.1
   themeButtons:
   - {fileID: 0}
   - {fileID: 0}
@@ -131,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a1b27e84a78c44e820cfc014dd4559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoCelebracion: 0
+  tiempoCelebracion: 3
 --- !u!114 &4081865297496752542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +200,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 56169c4dca2b3614b999927261d67f96, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -254,7 +294,7 @@ Animator:
   m_GameObject: {fileID: 1532853292679942595}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 54af83a9096301d48b3da5a05fdc2350, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

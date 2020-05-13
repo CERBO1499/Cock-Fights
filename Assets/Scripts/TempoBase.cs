@@ -6,12 +6,29 @@ using System;
 [Serializable]
 public struct TempoBase
 {
-    [SerializeField]
-    public AudioClip instrumental;
-    [SerializeField]
+    private const string RUTA_BASES = "Bases/";
+
+    public string RutaInstrumental{ get => RUTA_BASES + nombre; }
     public string nombre;
-    [SerializeField]
-    public float tiempoRimas;
-    [SerializeField]
-    public float tiempoFrase;
+    public int precio;
+    public bool comprada;
+
+    public TempoBase(string n, int p, bool c)
+    {
+        nombre = n;
+        precio = p;
+        comprada = c;
+    }
+}
+
+
+[Serializable]
+public class ListaTempoBase
+{
+    public List<TempoBase> basesGuardadas;
+
+    public ListaTempoBase(List<TempoBase> bases)
+    {
+        basesGuardadas = bases;
+    }
 }

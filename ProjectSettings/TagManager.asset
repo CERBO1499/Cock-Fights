@@ -8,6 +8,7 @@ TagManager:
   - PLAY_BUTTON
   - Celebras
   - Indicaciones
+  - Monedas
   layers:
   - Default
   - TransparentFX
@@ -45,3 +46,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Toste
+    uniqueID: 3189341329
+    locked: 1

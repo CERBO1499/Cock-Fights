@@ -8,6 +8,8 @@ using UnityEngine.EventSystems;
 
 public class RunTurn : MonoBehaviour
 {
+    private const float TIEMPO_PARA_ESCOGER_FRASE = 4f;
+
     //  Envía la señal de que el tiempo para completar la frase terminó.
     public static event Action<bool> EnFraseTerminada;
 
@@ -50,13 +52,13 @@ public class RunTurn : MonoBehaviour
 
         if(BasesManager.Instancia != null)
         {
-            timePrhaseSlider.maxValue = BasesManager.Instancia.TiempoFrase;
-            timePrhaseSlider.value = BasesManager.Instancia.TiempoFrase;
+            timePrhaseSlider.maxValue = TIEMPO_PARA_ESCOGER_FRASE;
+            timePrhaseSlider.value = TIEMPO_PARA_ESCOGER_FRASE;
 
-            timePerRhyme = BasesManager.Instancia.TiempoFrase;
+            timePerRhyme = TIEMPO_PARA_ESCOGER_FRASE;
 
-            timeRhymeSlider.maxValue = BasesManager.Instancia.TiempoFrase;
-            timeRhymeSlider.value = BasesManager.Instancia.TiempoFrase;
+            timeRhymeSlider.maxValue = TIEMPO_PARA_ESCOGER_FRASE;
+            timeRhymeSlider.value = TIEMPO_PARA_ESCOGER_FRASE;
         }
         else
         {
@@ -122,7 +124,7 @@ public class RunTurn : MonoBehaviour
 
             if (timePerRhyme <= 0)
             {
-                if(BasesManager.Instancia != null) timePerRhyme = BasesManager.Instancia.TiempoFrase;
+                if(BasesManager.Instancia != null) timePerRhyme = TIEMPO_PARA_ESCOGER_FRASE;
                 else timePerRhyme = 4;
                 rhymeCount++;
                 VFXUI = false;
