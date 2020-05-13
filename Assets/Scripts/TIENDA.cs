@@ -38,6 +38,8 @@ public class TIENDA : GuardaBases
 
         Cargar(NOMBRE_DE_LISTA);
 
+        BasesManager.Instancia.IniciarMonedas();
+
         BaseAleatoria();
     }
     public  void CheckBuy()

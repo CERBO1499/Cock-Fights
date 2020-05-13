@@ -53,14 +53,13 @@ public class BasesManager : GuardaBases
     {
         DontDestroyOnLoad(this);
 
-        monedas = GameObject.FindGameObjectWithTag("Monedas").GetComponent<TextMeshProUGUI>();
-        if(monedas != null) monedas.text = Monedas.ToString();
+        IniciarMonedas();
         
         parlante = GetComponent<AudioSource>();
 
         BaseAleatoria();        
     }
-public override void CambiarBase()
+    public override void CambiarBase()
     {
         parlante.Stop();
         if(nombre != null) 
@@ -74,7 +73,7 @@ public override void CambiarBase()
 
         //Debug.Log(baseActual);
     }
-public void CambiarBase(TempoBase tmpBase)
+    public void CambiarBase(TempoBase tmpBase)
     {
         parlante.Stop();
         parlante.clip = Resources.Load<AudioClip>(tmpBase.RutaInstrumental);
@@ -84,22 +83,18 @@ public void CambiarBase(TempoBase tmpBase)
 
         //Debug.Log(baseActual);
     }  
-
     public void Detener()
     {
         Instancia.Detener(0);
     }
-
     public void Detener(int i)
     {
         parlante.Stop();
     }
-
     public void RecibirUsuarios()
     {
         Instancia.RecibirUsuarios(0);
     }
-
     public void RecibirUsuarios(int l)
     {
         TMP_InputField[] inputs = FindObjectsOfType<TMP_InputField>();
@@ -107,7 +102,6 @@ public void CambiarBase(TempoBase tmpBase)
         Usuario1 = inputs[0].text;
         Usuario2 = inputs[1].text;
     }
-
     public void PuntajeAMonedas(float puntaje)
     {
         Monedas += (int)(puntaje/100f);
@@ -115,16 +109,26 @@ public void CambiarBase(TempoBase tmpBase)
         
         if(monedas != null) monedas.text = Monedas.ToString();
     }
-
     public void Comprar(int precio)
     {
         Monedas -= precio;
         PlayerPrefs.SetInt("Monedas", Monedas);
+        MostrarMonedas();
     }
-
     public void AddSong(TempoBase song)
     {
         bases.Add(song);
     }
+    public void IniciarMonedas()
+    {
+        monedas = GameObject.FindGameObjectWithTag("Monedas").GetComponent<TextMeshProUGUI>();
+        
+        MostrarMonedas();
+    }
+    public void MostrarMonedas()
+    {
+        if(monedas != null) monedas.text = Monedas.ToString();
+    }
+
     public AudioClip Instrumental { get => Resources.Load<AudioClip>(bases[baseActual].RutaInstrumental); }
 }
